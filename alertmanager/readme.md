@@ -39,3 +39,6 @@ inhibit_rules:
     target_match:
       severity: 'warning'
     equal: ['alertname', 'dev', 'instance']
+```
+
+For more alerting rules, visit [Awesome Prometheus Alerts](https://samber.github.io/awesome-prometheus-alerts/).

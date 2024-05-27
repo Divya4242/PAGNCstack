@@ -14,10 +14,10 @@ receivers:
   - name: 'Mail Alert'
     email_configs:
       - smarthost: smtp.gmail.com:587
-        auth_username: 'your-email-id@gmail.com'
-        auth_password: 'xxxx xxxx xxxx xxxx'
-        from: 'your-email-id@gmail.com'
-        to: 'receiver-email-id@gmail.com'
+        auth_username: 'your-email-id@gmail.com' # REPLACE IT 
+        auth_password: 'xxxx xxxx xxxx xxxx' # REPLACE IT 
+        from: 'your-email-id@gmail.com' # REPLACE IT 
+        to: 'receiver-email-id@gmail.com' # REPLACE IT 
         headers:
           subject: 'Prometheus Mail Alerts'
 inhibit_rules:

@@ -55,4 +55,4 @@ services:
       - "/dev/disk/:/dev/disk:ro"
       - "/dev/kmsg:/dev/kmsg"
     ports:
-      - "8080:8080"
+      - "8085:8080"

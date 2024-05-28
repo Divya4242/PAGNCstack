@@ -1,0 +1,1320 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "Containers metrics",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": 1,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "edn1i80ip76yod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 0
+      },
+      "id": 15,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "ddlrm7xoc6vb4b"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "count(container_last_seen{name=~\"grafana|prometheus|alertmanager|cadvisor|node_exporter\"})",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Running Containers",
+      "type": "stat"
+    },
+    {
+      "datasource": {},
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 0
+      },
+      "id": 7,
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "ddlrm7xoc6vb4b"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "machine_cpu_cores",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "CPU Cores",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "edn1i80ip76yod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 2,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 0
+      },
+      "hideTimeOverride": true,
+      "id": 2,
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "Prometheus"
+          },
+          "editorMode": "code",
+          "expr": "avg(container_memory_usage_bytes)",
+          "interval": "10s",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "range": true,
+          "refId": "A",
+          "step": 20
+        }
+      ],
+      "timeFrom": "10s",
+      "title": "Used Memory",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "edn1i80ip76yod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 65
+              },
+              {
+                "color": "rgba(245, 54, 54, 0.9)",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 12,
+        "y": 0
+      },
+      "hideTimeOverride": true,
+      "id": 6,
+      "maxDataPoints": 100,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "11.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "ddlrm7xoc6vb4b"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "sum(container_fs_usage_bytes) % 100",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "timeFrom": "10s",
+      "title": "Storage Load",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "edn1i80ip76yod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 2,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 0
+      },
+      "hideTimeOverride": true,
+      "id": 3,
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "Prometheus"
+          },
+          "editorMode": "builder",
+          "expr": "sum(container_fs_usage_bytes)",
+          "interval": "30s",
+          "intervalFactor": 2,
+          "range": true,
+          "refId": "A",
+          "step": 60
+        }
+      ],
+      "timeFrom": "10s",
+      "title": "Used Storage",
+      "type": "stat"
+    },
+    {
+      "datasource": {},
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 2,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 65
+              },
+              {
+                "color": "rgba(245, 54, 54, 0.9)",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 0
+      },
+      "hideTimeOverride": true,
+      "id": 4,
+      "maxDataPoints": 100,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "11.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "Prometheus"
+          },
+          "editorMode": "code",
+          "expr": "sum(rate(container_cpu_user_seconds_total[1m])) / count(node_cpu_seconds_total{mode=\"user\"}) * 100",
+          "interval": "10s",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "range": true,
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "timeFrom": "10s",
+      "title": "CPU Load",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "edn1i80ip76yod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{container_label_com_docker_compose_config_hash=\"95df3d23eb9b2ff804a8c461546f26fd799a181d3323cf66cbe2421278fdc23e\", container_label_com_docker_compose_container_number=\"1\", container_label_com_docker_compose_image=\"sha256:f9095e2f0444d50d16f3d1a1bb52ca4a6971ba7359fe78e0f0247c3dc70047cc\", container_label_com_docker_compose_oneoff=\"False\", container_label_com_docker_compose_project=\"prometheus-grafana-nodeexporter-alertmanager-cadvisor-telegraf\", container_label_com_docker_compose_project_config_files=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf/docker-compose.yml\", container_label_com_docker_compose_project_working_dir=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf\", container_label_com_docker_compose_service=\"grafana\", container_label_com_docker_compose_version=\"2.3.3\", container_label_maintainer=\"Grafana Labs <hello@grafana.com>\", id=\"/system.slice/docker-baed74fb6d0689e7022f10253059326f5ac96989904e4ec8b04f2f3260c8052a.scope\", image=\"grafana/grafana\", instance=\"cadvisor:8080\", job=\"cadvisor\", name=\"grafana\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Grafana"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{container_label_com_docker_compose_config_hash=\"14812dce3189ef7d9bacda3fec2b7cb12459617fbad2cd2dad59407891380a79\", container_label_com_docker_compose_container_number=\"1\", container_label_com_docker_compose_image=\"sha256:ecb74a3b23a93d396bca594b72f38a32180c46e60e1a08c5c03aa749bbb5c95a\", container_label_com_docker_compose_oneoff=\"False\", container_label_com_docker_compose_project=\"prometheus-grafana-nodeexporter-alertmanager-cadvisor-telegraf\", container_label_com_docker_compose_project_config_files=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf/docker-compose.yml\", container_label_com_docker_compose_project_working_dir=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf\", container_label_com_docker_compose_service=\"prometheus\", container_label_com_docker_compose_version=\"2.3.3\", container_label_maintainer=\"The Prometheus Authors <prometheus-developers@googlegroups.com>\", id=\"/system.slice/docker-a7bbbad1ca57641e88ba988a7c6a386132b604490a6a2504b94db23bae4be20d.scope\", image=\"prom/prometheus\", instance=\"cadvisor:8080\", job=\"cadvisor\", name=\"prometheus\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Prometheus"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{container_label_com_docker_compose_config_hash=\"927128b3a16d5d481be9f243dd3178f35f5e426b657ac823566729e428a249d3\", container_label_com_docker_compose_container_number=\"1\", container_label_com_docker_compose_image=\"sha256:c02cf39d3dba9fcf5531f23358e33377e50fcc6065d97a27e68a4242229c67a0\", container_label_com_docker_compose_oneoff=\"False\", container_label_com_docker_compose_project=\"prometheus-grafana-nodeexporter-alertmanager-cadvisor-telegraf\", container_label_com_docker_compose_project_config_files=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf/docker-compose.yml\", container_label_com_docker_compose_project_working_dir=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf\", container_label_com_docker_compose_service=\"cadvisor\", container_label_com_docker_compose_version=\"2.3.3\", id=\"/system.slice/docker-93d7355077347586dab956f9dd8bf50cd479b15f1dc4e9e4568786b5f801a042.scope\", image=\"gcr.io/cadvisor/cadvisor:v0.49.1\", instance=\"cadvisor:8080\", job=\"cadvisor\", name=\"cadvisor\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "cadvisor"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{container_label_com_docker_compose_config_hash=\"633ab8ea920f4d05cb7e671c992e6d3a0fd5a160f6b09cabd9533fe05b0250bb\", container_label_com_docker_compose_container_number=\"1\", container_label_com_docker_compose_image=\"sha256:11f11916f8cdfb17c1da74b20deb2075d778357b4d60474d82453303f8d461f5\", container_label_com_docker_compose_oneoff=\"False\", container_label_com_docker_compose_project=\"prometheus-grafana-nodeexporter-alertmanager-cadvisor-telegraf\", container_label_com_docker_compose_project_config_files=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf/docker-compose.yml\", container_label_com_docker_compose_project_working_dir=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf\", container_label_com_docker_compose_service=\"alertmanager\", container_label_com_docker_compose_version=\"2.3.3\", container_label_maintainer=\"The Prometheus Authors <prometheus-developers@googlegroups.com>\", id=\"/system.slice/docker-6d7299e07fe59d1abd73e66f62073a6e181e980f71569202ef7bc195ae95b67f.scope\", image=\"prom/alertmanager\", instance=\"cadvisor:8080\", job=\"cadvisor\", name=\"alertmanager\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Alertmanager"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{container_label_com_docker_compose_config_hash=\"41216cd0c6b6b86ef9102b8ca0bacbdd2bcca63dc760c914f4543f68d9f1db1b\", container_label_com_docker_compose_container_number=\"1\", container_label_com_docker_compose_image=\"sha256:0c6f6c1bdd47cbc06f11347daced99916dc4e6845a20b661db3d000fa1d21b82\", container_label_com_docker_compose_oneoff=\"False\", container_label_com_docker_compose_project=\"prometheus-grafana-nodeexporter-alertmanager-cadvisor-telegraf\", container_label_com_docker_compose_project_config_files=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf/docker-compose.yml\", container_label_com_docker_compose_project_working_dir=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf\", container_label_com_docker_compose_service=\"node_exporter\", container_label_com_docker_compose_version=\"2.3.3\", container_label_maintainer=\"The Prometheus Authors <prometheus-developers@googlegroups.com>\", id=\"/system.slice/docker-960e398f5238cd9cdabb20987dfff6d76ce08c78fe028b10db3405cc39fd1b5d.scope\", image=\"quay.io/prometheus/node-exporter:latest\", instance=\"cadvisor:8080\", job=\"cadvisor\", name=\"node_exporter\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Node-Exporter"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 4
+      },
+      "id": 8,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "11.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "ddlrm7xoc6vb4b"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "(rate(container_cpu_system_seconds_total{name=\"grafana\"}[5m]))*100",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "ddlrm7xoc6vb4b"
+          },
+          "editorMode": "code",
+          "expr": "(rate(container_cpu_system_seconds_total{name=\"prometheus\"}[5m]))*100",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "ddlrm7xoc6vb4b"
+          },
+          "editorMode": "code",
+          "expr": "(rate(container_cpu_system_seconds_total{name=\"cadvisor\"}[5m]))*100",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "edn1i80ip76yod"
+          },
+          "editorMode": "code",
+          "expr": "(rate(container_cpu_system_seconds_total{name=\"alertmanager\"}[5m]))*100",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "edn1i80ip76yod"
+          },
+          "editorMode": "code",
+          "expr": "(rate(container_cpu_system_seconds_total{name=\"node_exporter\"}[5m]))*100",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "E"
+        }
+      ],
+      "title": "Container CPU Usage",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "edn1i80ip76yod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1000
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{container_label_com_docker_compose_config_hash=\"14812dce3189ef7d9bacda3fec2b7cb12459617fbad2cd2dad59407891380a79\", container_label_com_docker_compose_container_number=\"1\", container_label_com_docker_compose_image=\"sha256:ecb74a3b23a93d396bca594b72f38a32180c46e60e1a08c5c03aa749bbb5c95a\", container_label_com_docker_compose_oneoff=\"False\", container_label_com_docker_compose_project=\"prometheus-grafana-nodeexporter-alertmanager-cadvisor-telegraf\", container_label_com_docker_compose_project_config_files=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf/docker-compose.yml\", container_label_com_docker_compose_project_working_dir=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf\", container_label_com_docker_compose_service=\"prometheus\", container_label_com_docker_compose_version=\"2.3.3\", container_label_maintainer=\"The Prometheus Authors <prometheus-developers@googlegroups.com>\", id=\"/system.slice/docker-a7bbbad1ca57641e88ba988a7c6a386132b604490a6a2504b94db23bae4be20d.scope\", image=\"prom/prometheus\", instance=\"cadvisor:8080\", job=\"cadvisor\", name=\"prometheus\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "cadvisor"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{container_label_com_docker_compose_config_hash=\"41216cd0c6b6b86ef9102b8ca0bacbdd2bcca63dc760c914f4543f68d9f1db1b\", container_label_com_docker_compose_container_number=\"1\", container_label_com_docker_compose_image=\"sha256:0c6f6c1bdd47cbc06f11347daced99916dc4e6845a20b661db3d000fa1d21b82\", container_label_com_docker_compose_oneoff=\"False\", container_label_com_docker_compose_project=\"prometheus-grafana-nodeexporter-alertmanager-cadvisor-telegraf\", container_label_com_docker_compose_project_config_files=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf/docker-compose.yml\", container_label_com_docker_compose_project_working_dir=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf\", container_label_com_docker_compose_service=\"node_exporter\", container_label_com_docker_compose_version=\"2.3.3\", container_label_maintainer=\"The Prometheus Authors <prometheus-developers@googlegroups.com>\", id=\"/system.slice/docker-960e398f5238cd9cdabb20987dfff6d76ce08c78fe028b10db3405cc39fd1b5d.scope\", image=\"quay.io/prometheus/node-exporter:latest\", instance=\"cadvisor:8080\", job=\"cadvisor\", name=\"node_exporter\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "alertmanager"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{container_label_com_docker_compose_config_hash=\"633ab8ea920f4d05cb7e671c992e6d3a0fd5a160f6b09cabd9533fe05b0250bb\", container_label_com_docker_compose_container_number=\"1\", container_label_com_docker_compose_image=\"sha256:11f11916f8cdfb17c1da74b20deb2075d778357b4d60474d82453303f8d461f5\", container_label_com_docker_compose_oneoff=\"False\", container_label_com_docker_compose_project=\"prometheus-grafana-nodeexporter-alertmanager-cadvisor-telegraf\", container_label_com_docker_compose_project_config_files=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf/docker-compose.yml\", container_label_com_docker_compose_project_working_dir=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf\", container_label_com_docker_compose_service=\"alertmanager\", container_label_com_docker_compose_version=\"2.3.3\", container_label_maintainer=\"The Prometheus Authors <prometheus-developers@googlegroups.com>\", id=\"/system.slice/docker-6d7299e07fe59d1abd73e66f62073a6e181e980f71569202ef7bc195ae95b67f.scope\", image=\"prom/alertmanager\", instance=\"cadvisor:8080\", job=\"cadvisor\", name=\"alertmanager\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "grafana"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{container_label_com_docker_compose_config_hash=\"927128b3a16d5d481be9f243dd3178f35f5e426b657ac823566729e428a249d3\", container_label_com_docker_compose_container_number=\"1\", container_label_com_docker_compose_image=\"sha256:c02cf39d3dba9fcf5531f23358e33377e50fcc6065d97a27e68a4242229c67a0\", container_label_com_docker_compose_oneoff=\"False\", container_label_com_docker_compose_project=\"prometheus-grafana-nodeexporter-alertmanager-cadvisor-telegraf\", container_label_com_docker_compose_project_config_files=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf/docker-compose.yml\", container_label_com_docker_compose_project_working_dir=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf\", container_label_com_docker_compose_service=\"cadvisor\", container_label_com_docker_compose_version=\"2.3.3\", id=\"/system.slice/docker-93d7355077347586dab956f9dd8bf50cd479b15f1dc4e9e4568786b5f801a042.scope\", image=\"gcr.io/cadvisor/cadvisor:v0.49.1\", instance=\"cadvisor:8080\", job=\"cadvisor\", name=\"cadvisor\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "NodeExporter"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{container_label_com_docker_compose_config_hash=\"95df3d23eb9b2ff804a8c461546f26fd799a181d3323cf66cbe2421278fdc23e\", container_label_com_docker_compose_container_number=\"1\", container_label_com_docker_compose_image=\"sha256:f9095e2f0444d50d16f3d1a1bb52ca4a6971ba7359fe78e0f0247c3dc70047cc\", container_label_com_docker_compose_oneoff=\"False\", container_label_com_docker_compose_project=\"prometheus-grafana-nodeexporter-alertmanager-cadvisor-telegraf\", container_label_com_docker_compose_project_config_files=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf/docker-compose.yml\", container_label_com_docker_compose_project_working_dir=\"/home/ubuntu/Prometheus-Grafana-NodeExporter-Alertmanager-Cadvisor-Telegraf\", container_label_com_docker_compose_service=\"grafana\", container_label_com_docker_compose_version=\"2.3.3\", container_label_maintainer=\"Grafana Labs <hello@grafana.com>\", id=\"/system.slice/docker-baed74fb6d0689e7022f10253059326f5ac96989904e4ec8b04f2f3260c8052a.scope\", image=\"grafana/grafana\", instance=\"cadvisor:8080\", job=\"cadvisor\", name=\"grafana\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Prometheus"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 11
+      },
+      "id": 16,
+      "options": {
+        "displayMode": "gradient",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "top",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "11.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "edn1i80ip76yod"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "(time() - container_start_time_seconds{name=~\"cadvisor|alertmanager|grafana|node_exporter|prometheus\"}) / 60",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Container Run Time (Minutes)",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "edn1i80ip76yod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 500
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "id": 11,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "Prometheus"
+          },
+          "editorMode": "code",
+          "expr": "sum by (name)(container_memory_usage_bytes{name=~\"alertmanager|cadvisor|grafana|node_exporter|prometheus\"})",
+          "intervalFactor": 1,
+          "legendFormat": "{{ name }}",
+          "metric": "container_memory_usage",
+          "range": true,
+          "refId": "A",
+          "step": 1
+        }
+      ],
+      "title": "Container Memory Usage",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "edn1i80ip76yod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 25
+      },
+      "id": 12,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "Prometheus"
+          },
+          "editorMode": "code",
+          "expr": "sum by (name) (container_memory_cache{name=~\"alertmanager|cadvisor|grafana|node_exporter|prometheus\"})",
+          "intervalFactor": 2,
+          "legendFormat": "{{name}}",
+          "metric": "container_memory_cache",
+          "range": true,
+          "refId": "A",
+          "step": 2
+        }
+      ],
+      "title": "Container Cached Memory Usage",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "edn1i80ip76yod"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 32
+      },
+      "id": 13,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "10.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "Prometheus"
+          },
+          "editorMode": "code",
+          "expr": "sum by (name) (rate(container_network_receive_bytes_total{name=~\"alertmanager|cadvisor|grafana|node_exporter|prometheus\"}[1m]))",
+          "intervalFactor": 10,
+          "legendFormat": "{{ name }}",
+          "metric": "container_network_receive_bytes_total",
+          "range": true,
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "title": "Container Network Input",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {},
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 39
+      },
+      "id": 14,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "10.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "Prometheus"
+          },
+          "editorMode": "code",
+          "expr": "sum by (name) (rate(container_network_transmit_bytes_total{imagcontainer_label_org_label_schema_group=\"\"}[1m]))",
+          "intervalFactor": 10,
+          "legendFormat": "{{ name }}",
+          "metric": "container_network_transmit_bytes_total",
+          "range": true,
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "title": "Container Network Output",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "byVariable": false,
+            "include": {
+              "names": [
+                "cadvisor",
+                "grafana",
+                "node_exporter",
+                "prometheus",
+                "alertmanager",
+                "Time"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "timeseries"
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": [
+    "docker"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "timeRangeUpdatedDuringEditOrView": false,
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "Docker Containers",
+  "uid": "edmy220egvdvkb",
+  "version": 24,
+  "weekStart": ""
+}

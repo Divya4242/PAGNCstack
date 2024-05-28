@@ -1,0 +1,11 @@
+groups:
+- name: server_is_down
+  rules:
+  - alert: server_is_down
+    expr: up == 0
+    for: 1m
+    labels:
+      severity: page
+    annotations:
+      summary: "Server(s) are down."
+      description: "[{{ $labels.instance }}] of job {{ $labels.job }} has been down for more than 1 minute."

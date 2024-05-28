@@ -13,7 +13,9 @@ git clone https://github.com/Divya4242/PAGNCstack.git
 cd PAGNCstack
 ```
 Prerequisites
+
 • Docker Engine >= 1.13
+
 • Docker Compose >= 1.11
 
 ## Setup AlertManager

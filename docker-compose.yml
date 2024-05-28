@@ -5,6 +5,7 @@ services:
     image: prom/prometheus
     container_name: prometheus
     volumes:
+      - ./alertmanager/alerting.rules.yml:/etc/prometheus/alerting.rules.yml
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"

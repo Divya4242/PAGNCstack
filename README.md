@@ -28,15 +28,22 @@ docker-compose -f docker-compose.yml up -d
 ## Setup Grafana
 ![image](https://github.com/Divya4242/PAGNCstack/assets/113757574/26c2b9d7-2838-4fb4-8b24-a72f92146074)
 
-• make sure all targets are up
+1. Ensure all targets are up as shown in the image above.
 
 ![image](https://github.com/Divya4242/PAGNCstack/assets/113757574/d8c63e07-b355-4fdd-8bd2-350be396cd04)
 
-• Go to grafana and then add datasource Prometheus. Add Prometheus server url in Connection as can see in above image. after adding url click in Save & Test button at bottom
+2. Go to Grafana and add the Prometheus data source:
+   
+    • Add the Prometheus server URL in the connection settings as shown in the image above.
+
+    • Click the "Save & Test" button at the bottom of grafana page.
 
 ![image](https://github.com/Divya4242/PAGNCstack/assets/113757574/33ddecf2-b32b-4b45-834a-d6b7864c4595)
 
-• Once datasource is successfully added now add dashboard. Go to Dashboards -> import dashboard -> Import via dashboard JSON model . now add dashboard.json present in grafana folder of github to the "Import via dashboard JSON model" input box
+3. Once the data source is successfully added, import the dashboard:
+
+    • Go to Dashboards -> Import -> Import via Dashboard JSON.
+    • Paste the contents of [dashboard.json](https://github.com/Divya4242/PAGNCstack/blob/main/grafana/dashboard.json) from the Grafana folder in this repository.
 
 ## Dashboard Photos
 ![image](https://github.com/Divya4242/PAGNCstack/assets/113757574/abe4ecf6-26f0-46e6-ba11-3f9d82a99eba)
@@ -44,7 +51,7 @@ docker-compose -f docker-compose.yml up -d
 ![image](https://github.com/Divya4242/PAGNCstack/assets/113757574/88399da5-959a-40cf-bffd-237bfa4ddf77)
 
 
-
+#### By following these steps, you can set up a robust monitoring stack for your Docker environments, providing insights and alerts to keep your services running smoothly.
 
 
 

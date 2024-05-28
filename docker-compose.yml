@@ -20,15 +20,6 @@ services:
     ports:
       - "9100:9100"
 
-  telegraf:
-    image: telegraf
-    container_name: telegraf
-    volumes:
-      - /var/log/nginx/access.log:/access.log
-      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
-    ports:
-      - "9125:9125"
-
   grafana:
     image: grafana/grafana
     container_name: grafana

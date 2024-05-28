@@ -23,7 +23,7 @@ Prerequisites
     **Port**: 9090
 
   - **Grafana**: It is an open-source platform for monitoring and observability. It provides dashboards and visualizations for your data.
-    **port**: 3000
+    **Port**: 3000
 
   - **cAdvisor (Container Advisor)**: It provides container users an understanding of the resource usage and performance characteristics of their running containers.
     **Port**: 8085
@@ -70,7 +70,7 @@ docker-compose -f docker-compose.yml up -d
 ![image](https://github.com/Divya4242/PAGNCstack/assets/113757574/88399da5-959a-40cf-bffd-237bfa4ddf77)
 
 
-#### By following these steps, you can set up a robust monitoring stack for your Docker environments, providing insights and alerts to keep your services running smoothly.
+By following these steps, you can set up a robust monitoring stack for your Docker environments, providing insights and alerts to keep your services running smoothly.
 
 
 

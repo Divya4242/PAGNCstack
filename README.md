@@ -43,11 +43,14 @@ docker-compose -f docker-compose.yml up -d
 3. Once the data source is successfully added, import the dashboard:
 
     • Go to Dashboards -> Import -> Import via Dashboard JSON.
+
     • Paste the contents of [dashboard.json](https://github.com/Divya4242/PAGNCstack/blob/main/grafana/dashboard.json) from the Grafana folder in this repository.
 
 ## Dashboard Photos
 ![image](https://github.com/Divya4242/PAGNCstack/assets/113757574/abe4ecf6-26f0-46e6-ba11-3f9d82a99eba)
+
 ![image](https://github.com/Divya4242/PAGNCstack/assets/113757574/27817fe7-a7d7-488a-b367-b86cee0493d6)
+
 ![image](https://github.com/Divya4242/PAGNCstack/assets/113757574/88399da5-959a-40cf-bffd-237bfa4ddf77)
 
 

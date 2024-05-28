@@ -18,6 +18,27 @@ Prerequisites
 
 • Docker Compose >= 1.11
 
+## Services and Port Information
+Prometheus is an open-source systems monitoring and alerting toolkit. It collects and stores metrics as time series data.
+  
+  •  prometheus: 9090
+
+Grafana is an open-source platform for monitoring and observability. It provides dashboards and visualizations for your data.
+
+  •  grafana: 3000
+
+cAdvisor (Container Advisor) provides container users an understanding of the resource usage and performance characteristics of their running containers.
+
+  •  cadvisor: 8085
+
+AlertManager handles alerts sent by client applications such as Prometheus. It manages alerts, including silencing, inhibition, aggregation, and sending out notifications.
+
+  •  alertmanager: 9093
+
+NodeExporter exposes hardware and OS metrics exposed by *nix kernels, which Prometheus can scrape.
+
+  •  nodeexporter: 9100
+
 ## Setup AlertManager
 Follow the steps in the alertmanager folder's [README.md](https://github.com/Divya4242/PAGNCstack/blob/main/alertmanager/readme.md) file before running Docker Compose.
 

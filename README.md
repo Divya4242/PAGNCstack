@@ -19,13 +19,11 @@ Prerequisites
 • Docker Compose >= 1.11
 
 ## Services and Port Information
-Prometheus is an open-source systems monitoring and alerting toolkit. It collects and stores metrics as time series data.
-  
-  •  prometheus: 9090
+  - **Prometheus**: It is an open-source systems monitoring and alerting toolkit. It collects and stores metrics as time series data.
+    -**Port**: 9090
 
-Grafana is an open-source platform for monitoring and observability. It provides dashboards and visualizations for your data.
-
-  •  grafana: 3000
+  - **Grafana**: It is an open-source platform for monitoring and observability. It provides dashboards and visualizations for your data.
+    - **port**: 3000
 
 cAdvisor (Container Advisor) provides container users an understanding of the resource usage and performance characteristics of their running containers.
 

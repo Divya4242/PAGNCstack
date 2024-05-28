@@ -1,4 +1,4 @@
-![image](https://github.com/Divya4242/PAGNCstack/assets/113757574/aabff68a-b719-49a6-940f-16ed78f967c5)![image](https://github.com/Divya4242/PAGNCstack/assets/113757574/32ee5a1c-d980-4a4e-b51e-661eb2f78508)# Docker Monitoring Stack with [Prometheus](https://prometheus.io/), [Grafana](http://grafana.org/), [cAdvisor](https://github.com/google/cadvisor), [NodeExporter](https://github.com/prometheus/node_exporter) and [AlertManager](https://prometheus.io/docs/alerting/latest/alertmanager/)
+# Docker Monitoring Stack with [Prometheus](https://prometheus.io/), [Grafana](http://grafana.org/), [cAdvisor](https://github.com/google/cadvisor), [NodeExporter](https://github.com/prometheus/node_exporter) and [AlertManager](https://prometheus.io/docs/alerting/latest/alertmanager/)
 
 A comprehensive monitoring solution for Docker hosts and containers, utilizing Prometheus, Grafana, cAdvisor, NodeExporter, and AlertManager for alerting.
 

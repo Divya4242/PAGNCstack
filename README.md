@@ -19,7 +19,7 @@ Prerequisites
 • Docker Compose >= 1.11
 
 ## Setup AlertManager
-Follow the steps in the alertmanager folder's README.md file before running Docker Compose.
+Follow the steps in the alertmanager folder's [README.md](https://github.com/Divya4242/PAGNCstack/blob/main/alertmanager/readme.md) file before running Docker Compose.
 
 ## Run Docker Compose
 ```

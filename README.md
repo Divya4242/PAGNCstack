@@ -73,4 +73,3 @@ docker-compose -f docker-compose.yml up -d
 By following these steps, you can set up a robust monitoring stack for your Docker environments, providing insights and alerts to keep your services running smoothly.
 
 
-
